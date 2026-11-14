@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bvento — Italian Leather Handbags, Bentonville</title>
+<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked collection of eleven bags crafted in Italy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F6F3EC;
+    --cream-deep: #EDE7DA;
+    --ink: #14171F;
+    --ink-soft: #5B5E66;
+    --rule: #DCD5C6;
+    --accent: #B3431E;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(246,243,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1; text-decoration: none; letter-spacing: -.01em; }
+  .logo small { display: block; font-family: var(--sans); font-style: normal; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+  nav ul a { text-decoration: none; color: var(--ink-soft); }
+  nav ul a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; text-align: center; }
+  .eyebrow { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 8vw, 104px); line-height: .98; letter-spacing: -.02em; margin: 22px auto 26px; max-width: 14ch; }
+  .hero h1 em { color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 36px; }
+  .btn { display: inline-block; padding: 15px 30px; border: 1px solid var(--ink); background: var(--ink); color: var(--cream); text-decoration: none; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; transition: background .2s, color .2s; }
+  .btn:hover { background: transparent; color: var(--ink); }
+  .btn.ghost { background: transparent; color: var(--ink); margin-left: 10px; }
+  .btn.ghost:hover { background: var(--ink); color: var(--cream); }
+
+  /* Tricolore rule */
+  .flagrule { display: flex; width: 72px; height: 3px; margin: 0 auto; }
+  .flagrule span { flex: 1; }
+  .flagrule span:nth-child(1) { background: #3E7C4F; }
+  .flagrule span:nth-child(2) { background: #FFFFFF; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .flagrule span:nth-child(3) { background: #B5352C; }
+
+  /* Pillars */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .pillar { padding: 36px 28px; text-align: center; }
+  .pillar + .pillar { border-left: 1px solid var(--rule); }
+  .pillar h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin-bottom: 6px; }
+  .pillar p { font-size: 14px; color: var(--ink-soft); }
+
+  /* Collection */
+  section.collection { padding: 96px 0; }
+  .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
+  .section-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 5vw, 60px); line-height: 1; }
+  .section-head p { color: var(--ink-soft); max-width: 380px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 28px; }
+  .bag { cursor: zoom-in; }
+  .bag .frame { position: relative; aspect-ratio: 1 / 1; background: var(--cream-deep); overflow: hidden; }
+  .bag img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .bag:hover img { transform: scale(1.04); }
+  .bag .num { position: absolute; top: 14px; left: 14px; font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink); background: rgba(246,243,236,.85); padding: 2px 10px; }
+  .bag .placeholder { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #A89F8D; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
+  .bag .frame.missing img { display: none; }
+  .bag .frame.missing .placeholder { display: flex; }
+  .bag .meta { display: flex; justify-content: space-between; align-items: baseline; padding-top: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+  .bag h4 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; }
+  .bag .detail { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  .bag .right { text-align: right; }
+  .bag .price { font-family: var(--serif); font-size: 24px; line-height: 1.2; }
+  .bag .origin { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+
+  /* Story */
+  .story { background: var(--ink); color: var(--cream); padding: 110px 0; }
+  .story .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
+  .story h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 68px); line-height: 1.02; }
+  .story h2 em { color: #E07B54; }
+  .story p { color: #C9C5BC; font-size: 17px; margin-bottom: 18px; }
+  .story .eyebrow { color: #E07B54; display: block; margin-bottom: 18px; }
+
+  /* Visit */
+  .visit { padding: 104px 0; text-align: center; }
+  .visit h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; margin: 18px 0 18px; }
+  .visit p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 34px; font-size: 17px; }
+  .visit .phone { font-family: var(--serif); font-size: clamp(34px, 5vw, 48px); color: var(--ink); margin-bottom: 28px; }
+  .visit .phone a { text-decoration: none; }
+
+  footer { border-top: 1px solid var(--rule); padding: 36px 0; font-size: 13px; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  footer .logo { font-size: 26px; color: var(--ink); }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; background: rgba(20,23,31,.94); z-index: 50; display: none; align-items: center; justify-content: center; padding: 40px 72px; }
+  .lightbox.open { display: flex; }
+  .lightbox figure { max-width: 900px; width: 100%; text-align: center; color: var(--cream); }
+  .lightbox img { max-height: 78vh; margin: 0 auto; object-fit: contain; }
+  .lightbox figcaption { margin-top: 18px; font-family: var(--serif); font-size: 26px; }
+  .lightbox figcaption span { display: block; font-family: var(--sans); font-size: 13px; color: #A9A69F; margin-top: 4px; }
+  .lb-btn { position: absolute; background: none; border: 0; color: var(--cream); font-size: 36px; cursor: pointer; padding: 12px; line-height: 1; font-family: var(--serif); }
+  .lb-close { top: 16px; right: 20px; }
+  .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 32px 18px; }
+    .story .wrap { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    nav ul { display: none; }
+    .hero { padding: 64px 0 52px; }
+    .btn.ghost { margin: 12px 0 0; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar + .pillar { border-left: 0; border-top: 1px solid var(--rule); }
+    .grid { grid-template-columns: 1fr; }
+    section.collection, .story, .visit { padding: 72px 0; }
+    .lightbox { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">bvento<small>Italian leather · Bentonville</small></a>
+    <ul>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="flagrule"><span></span><span></span><span></span></div>
+    <p class="eyebrow" style="margin-top:22px">Made in Italy · Sold in Bentonville</p>
+    <h1>Italian leather, <em>close to home.</em></h1>
+    <p>bvento is Bentonville's home for genuine Italian-made leather handbags — a small, hand-picked collection you can see, touch, and carry today.</p>
+    <a href="#collection" class="btn">View the collection</a>
+    <a href="#visit" class="btn ghost">Visit us</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="pillars">
+    <div class="pillar"><h3>Made in Italy</h3><p>Every bag crafted by Italian leatherworkers.</p></div>
+    <div class="pillar"><h3>Eleven pieces</h3><p>A small collection — once a bag is gone, it's gone.</p></div>
+    <div class="pillar"><h3>Local &amp; personal</h3><p>See them in person right here in Bentonville.</p></div>
+  </div>
+</div>
+
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The Collection</h2>
+      <p>Eleven Italian leather handbags, each chosen for its craftsmanship, character, and the way it will age with you.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>From the workshops of Italy to <em>Northwest Arkansas.</em></h2>
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <p>Italy has set the standard for fine leather goods for centuries — supple hides, careful stitching, and hardware built to last. We believe Bentonville deserves easy access to that same craftsmanship, without a trip to Milan or a big-city boutique.</p>
+      <p>bvento brings a carefully selected collection of Italian-made leather handbags to our corner of the Ozarks. Each piece is inspected by hand and offered in limited numbers, so the bag you choose feels like yours alone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="flagrule"><span></span><span></span><span></span></div>
+    <h2>See them in person.</h2>
+    <p>Viewings are by appointment in Bentonville, Arkansas. Call or text to ask about a bag, check availability, or schedule a time to stop by.</p>
+    <p class="phone"><a href="tel:+14794853374">479-485-3374</a></p>
+    <a href="sms:+14794853374" class="btn">Text us</a>
+    <a href="tel:+14794853374" class="btn ghost">Call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">bvento</span>
+    <span>Italian leather handbags · Bentonville, Arkansas · <a href="tel:+14794853374">479-485-3374</a></span>
+    <span>&copy; <span id="yr"></span> bvento</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bag photo">
+  <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
+  <figure>
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
+</div>
+
+<script>
+  // Edit names/details/prices here (price in dollars; leave it out to hide). Drop photos into photos/ as bag-01.jpg … bag-11.jpg.
+  const BAGS = [
+    { name: "The Roma Crossbody",    detail: "Pebbled leather snap-flap crossbody · Cognac", price: 160 },
+    { name: "The Roma Crossbody",    detail: "Pebbled leather snap-flap crossbody · Navy",   price: 160 },
+    { name: "The Firenze Hobo",      detail: "Suede hobo shoulder bag · Cognac",             price: 180 },
+    { name: "The Firenze Hobo",      detail: "Suede hobo shoulder bag · Mocha",              price: 180 },
+    { name: "The Firenze Hobo",      detail: "Suede hobo shoulder bag · Stone",              price: 180 },
+    { name: "The Amalfi Tote",       detail: "Suede tote with tassel charm · Camel",         price: 160 },
+    { name: "The Siena Shopper",     detail: "Suede shoulder tote · Chocolate",              price: 180 },
+    { name: "The Siena Shopper",     detail: "Suede shoulder tote · Cognac",                 price: 180 },
+    { name: "The Milano Top-Handle", detail: "Suede with leather handles · Chocolate",       price: 160 },
+    { name: "The Milano Top-Handle", detail: "Suede with leather handles · Stone",           price: 160 },
+    { name: "The Venezia Knot",      detail: "Leather loop-handle clutch · Burgundy",        price: 160 },
+  ];
+
+  const BAG_ICON = '<svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 24v-4a10 10 0 0 1 20 0v4"/><path d="M12 24h40l-4 30H16z"/><path d="M26 34h12"/></svg>';
+  const pad = n => String(n).padStart(2, "0");
+  const grid = document.getElementById("grid");
+
+  BAGS.forEach((bag, i) => {
+    const n = pad(i + 1);
+    bag.src = `photos/bag-${n}.jpg`;
+    const el = document.createElement("article");
+    el.className = "bag";
+    el.innerHTML = `
+      <div class="frame">
+        <img src="${bag.src}" alt="${bag.name} — Italian leather handbag" loading="lazy">
+        <div class="placeholder">${BAG_ICON}Photo coming soon</div>
+        <span class="num">No. ${n}</span>
+      </div>
+      <div class="meta">
+        <div><h4>${bag.name}</h4><div class="detail">${bag.detail}</div></div>
+        <div class="right">${bag.price ? `<div class="price">$${bag.price}</div>` : ""}<span class="origin">Made in Italy</span></div>
+      </div>`;
+    const img = el.querySelector("img");
+    img.addEventListener("error", () => { el.querySelector(".frame").classList.add("missing"); bag.missing = true; });
+    el.addEventListener("click", () => { if (!bag.missing) openLb(i); });
+    grid.appendChild(el);
+  });
+
+  // Lightbox
+  const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+  let cur = 0;
+  const available = () => BAGS.map((b, i) => b.missing ? null : i).filter(i => i !== null);
+  function openLb(i) {
+    cur = i;
+    const b = BAGS[i];
+    lbImg.src = b.src; lbImg.alt = b.name;
+    lbCap.innerHTML = `${b.name}${b.price ? ` — $${b.price}` : ""}<span>No. ${pad(i + 1)} · ${b.detail} · Made in Italy</span>`;
+    lb.classList.add("open");
+  }
+  function step(d) {
+    const list = available(); if (!list.length) return;
+    const pos = list.indexOf(cur);
+    openLb(list[(pos + d + list.length) % list.length]);
+  }
+  const closeLb = () => lb.classList.remove("open");
+  lb.querySelector(".lb-close").onclick = closeLb;
+  lb.querySelector(".lb-prev").onclick = e => { e.stopPropagation(); step(-1); };
+  lb.querySelector(".lb-next").onclick = e => { e.stopPropagation(); step(1); };
+  lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLb();
+    if (e.key === "ArrowLeft") step(-1);
+    if (e.key === "ArrowRight") step(1);
+  });
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
