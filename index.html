@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bvento — Italian Leather Handbags, Bentonville</title>
-<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked collection of eleven bags crafted in Italy.">
+<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked collection of twelve bags crafted in Italy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -79,6 +79,9 @@
   .bag .detail { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
   .bag .right { text-align: right; }
   .bag .price { font-family: var(--serif); font-size: 24px; line-height: 1.2; }
+  .bag .sold-tag { position: absolute; top: 14px; right: 14px; background: var(--accent); color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 5px 12px; }
+  .bag.sold img { opacity: .8; }
+  .bag.sold .price { text-decoration: line-through; color: var(--ink-soft); }
   .bag .origin { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
 
   /* Story */
@@ -156,7 +159,7 @@
 <div class="wrap">
   <div class="pillars">
     <div class="pillar"><h3>Made in Italy</h3><p>Every bag crafted by Italian leatherworkers.</p></div>
-    <div class="pillar"><h3>Eleven pieces</h3><p>A small collection — once a bag is gone, it's gone.</p></div>
+    <div class="pillar"><h3>Twelve pieces</h3><p>A small collection — once a bag is gone, it's gone.</p></div>
     <div class="pillar"><h3>Local &amp; personal</h3><p>See them in person right here in Bentonville.</p></div>
   </div>
 </div>
@@ -165,7 +168,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>The Collection</h2>
-      <p>Eleven Italian leather handbags, each chosen for its craftsmanship, character, and the way it will age with you.</p>
+      <p>Twelve Italian leather handbags, each chosen for its craftsmanship, character, and the way it will age with you.</p>
     </div>
     <div class="grid" id="grid"></div>
   </div>
@@ -225,6 +228,7 @@
     { name: "The Milano Top-Handle", detail: "Suede with leather handles · Chocolate",       price: 160 },
     { name: "The Milano Top-Handle", detail: "Suede with leather handles · Stone",           price: 160 },
     { name: "The Venezia Knot",      detail: "Leather loop-handle clutch · Burgundy",        price: 160 },
+    { name: "The Milano Top-Handle", detail: "Suede with leather handles · Espresso",        price: 160, sold: true },
   ];
 
   const BAG_ICON = '<svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 24v-4a10 10 0 0 1 20 0v4"/><path d="M12 24h40l-4 30H16z"/><path d="M26 34h12"/></svg>';
@@ -235,12 +239,13 @@
     const n = pad(i + 1);
     bag.src = `photos/bag-${n}.jpg`;
     const el = document.createElement("article");
-    el.className = "bag";
+    el.className = bag.sold ? "bag sold" : "bag";
     el.innerHTML = `
       <div class="frame">
         <img src="${bag.src}" alt="${bag.name} — Italian leather handbag" loading="lazy">
         <div class="placeholder">${BAG_ICON}Photo coming soon</div>
         <span class="num">No. ${n}</span>
+        ${bag.sold ? `<span class="sold-tag">Sold</span>` : ""}
       </div>
       <div class="meta">
         <div><h4>${bag.name}</h4><div class="detail">${bag.detail}</div></div>
@@ -260,7 +265,7 @@
     cur = i;
     const b = BAGS[i];
     lbImg.src = b.src; lbImg.alt = b.name;
-    lbCap.innerHTML = `${b.name}${b.price ? ` — $${b.price}` : ""}<span>No. ${pad(i + 1)} · ${b.detail} · Made in Italy</span>`;
+    lbCap.innerHTML = `${b.name}${b.sold ? " — Sold" : b.price ? ` — $${b.price}` : ""}<span>No. ${pad(i + 1)} · ${b.detail} · Made in Italy</span>`;
     lb.classList.add("open");
   }
   function step(d) {
