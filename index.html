@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bvento — Italian Leather Handbags in Bentonville, AR</title>
-<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked collection of twelve bags crafted in Italy.">
+<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked selection of Italian-made handbags, available now.">
 <link rel="canonical" href="https://bvento.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="bvento">
 <meta property="og:title" content="bvento — Italian Leather Handbags in Bentonville">
-<meta property="og:description" content="A small, hand-picked collection of Italian-made leather and suede handbags. See them in Bentonville, Arkansas.">
+<meta property="og:description" content="A small, hand-picked selection of Italian-made leather and suede handbags, available now. See them in Bentonville, Arkansas.">
 <meta property="og:url" content="https://bvento.com/">
 <meta property="og:image" content="https://bvento.com/photos/bag-06.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -163,7 +163,7 @@
   <div class="wrap">
     <a href="#" class="logo">bvento<small>Italian leather · Bentonville</small></a>
     <ul>
-      <li><a href="#collection">Collection</a></li>
+      <li><a href="#collection">Available Now</a></li>
       <li><a href="#story">Our Story</a></li>
       <li><a href="#visit">Visit</a></li>
     </ul>
@@ -176,8 +176,8 @@
   <div class="wrap">
     <div class="flagrule"><span></span><span></span><span></span></div>
     <h1>Italian leather in Bentonville.</h1>
-    <p>bvento is Bentonville's home for genuine Italian-made leather handbags — a small, hand-picked collection you can see, touch, and carry today.</p>
-    <a href="#collection" class="btn">View the collection</a>
+    <p>bvento is Bentonville's home for genuine Italian-made leather handbags — a small, hand-picked selection you can see, touch, and carry today.</p>
+    <a href="#collection" class="btn">See what's available</a>
     <a href="#visit" class="btn ghost">Visit us</a>
   </div>
 </header>
@@ -185,7 +185,8 @@
 <section class="collection" id="collection">
   <div class="wrap">
     <div class="section-head">
-      <h2>The Collection</h2>
+      <h2>Available Now</h2>
+      <p id="stock"></p>
     </div>
     <div class="grid" id="grid"></div>
   </div>
@@ -196,7 +197,7 @@
     <h2>From the workshops of Italy to Bentonville.</h2>
     <div>
       <span class="eyebrow">Our Story</span>
-      <p>bvento brings a carefully selected collection of Italian-made leather handbags to our corner of the Ozarks. Each piece is inspected by hand and offered in limited numbers, bringing a little of Italy to Bentonville, one bag at a time.</p>
+      <p>bvento brings a carefully selected range of Italian-made leather handbags to our corner of the Ozarks. Each piece is inspected by hand and offered in limited numbers, bringing a little of Italy to Bentonville, one bag at a time.</p>
     </div>
   </div>
 </section>
@@ -302,6 +303,9 @@
   });
 
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  const inStock = BAGS.filter(b => !b.sold).length;
+  document.getElementById("stock").textContent = `${inStock} ${inStock === 1 ? "bag" : "bags"} available in Bentonville today.`;
 </script>
 </body>
 </html>
