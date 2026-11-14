@@ -58,8 +58,8 @@
   nav ul a:hover { color: var(--ink); }
 
   /* Hero */
-  .hero { position: relative; min-height: calc(100vh - 69px); min-height: calc(100svh - 69px); display: flex; align-items: center; padding: 96px 0; text-align: center; color: var(--cream); background: #2A2620 url("video/hero-poster.jpg") 40% center / cover; overflow: hidden; }
-  .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% center; }
+  .hero { position: relative; min-height: calc(100vh - 69px); min-height: calc(100svh - 69px); display: flex; align-items: center; padding: 96px 0; text-align: center; color: var(--cream); background: #2A2620 url("video/hero-poster.jpg?v=ponte") center / cover; overflow: hidden; }
+  .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,23,31,.30) 0%, rgba(20,23,31,.42) 55%, rgba(20,23,31,.70) 100%); }
   .hero .wrap { position: relative; z-index: 1; width: 100%; }
   .eyebrow { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
@@ -176,8 +176,8 @@
 </nav>
 
 <header class="hero">
-  <!-- Stock footage: vineyard sunset with cottage, Pexels video 33835653 (free license) -->
-  <video class="hero-video" src="video/hero.mp4" poster="video/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <!-- Stock footage: Ponte Vecchio at sunset, Florence, Pexels video 36830794 (free license) -->
+  <video class="hero-video" src="video/hero.mp4?v=ponte" poster="video/hero-poster.jpg?v=ponte" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="wrap">
     <div class="flagrule"><span></span><span></span><span></span></div>
     <h1>Italian leather in Bentonville.</h1>
