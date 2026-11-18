@@ -310,7 +310,7 @@
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
     heroVideo.removeAttribute("autoplay"); heroVideo.pause();
   } else {
-    heroVideo.defaultPlaybackRate = heroVideo.playbackRate = 0.65;
+    heroVideo.defaultPlaybackRate = heroVideo.playbackRate = 0.8;
   }
 
   const inStock = BAGS.filter(b => !b.sold).length;
