@@ -4,14 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bvento — Italian Leather Handbags in Bentonville, AR</title>
-<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags. A small, hand-picked selection of Italian-made handbags, available now.">
+<meta name="description" content="bvento is Bentonville's retailer of Italian-made leather handbags: a small, hand-picked selection available now, by appointment.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://bvento.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="bvento">
 <meta property="og:title" content="bvento — Italian Leather Handbags in Bentonville">
 <meta property="og:description" content="A small, hand-picked selection of Italian-made leather and suede handbags, available now. See them in Bentonville, Arkansas.">
 <meta property="og:url" content="https://bvento.com/">
-<meta property="og:image" content="https://bvento.com/photos/bag-06.jpg">
+<meta property="og:image" content="https://bvento.com/images/hero-bag.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -20,7 +23,7 @@
   "name": "bvento",
   "description": "Bentonville retailer of Italian-made leather handbags. Viewings by appointment.",
   "url": "https://bvento.com/",
-  "image": "https://bvento.com/photos/bag-06.jpg",
+  "image": "https://bvento.com/images/hero-bag.jpg",
   "telephone": "+1-479-485-3374",
   "address": { "@type": "PostalAddress", "addressLocality": "Bentonville", "addressRegion": "AR", "addressCountry": "US" },
   "areaServed": ["Bentonville", "Rogers", "Springdale", "Fayetteville", "Northwest Arkansas"],
@@ -56,6 +59,7 @@
   nav ul { display: flex; gap: 28px; list-style: none; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
   nav ul a { text-decoration: none; color: var(--ink-soft); }
   nav ul a:hover { color: var(--ink); }
+  .nav-cta { display: none; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; padding: 9px 14px; background: var(--ink); color: var(--cream); white-space: nowrap; }
 
   /* Hero */
   /* Hero: bag No. 01 sits across the bottom of the cream hero, with the copy above it. */
@@ -91,20 +95,20 @@
   .bag .placeholder { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #A89F8D; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
   .bag .frame.missing img { display: none; }
   .bag .frame.missing .placeholder { display: flex; }
-  .bag .meta { display: flex; justify-content: space-between; align-items: baseline; padding-top: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
-  .bag h4 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; }
+  .bag .meta { padding-top: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+  .bag .line { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .bag h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; }
   .bag .detail { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-  .bag .right { text-align: right; }
-  .bag .price { font-family: var(--serif); font-size: 24px; line-height: 1.2; }
+  .bag .price { font-family: var(--serif); font-size: 24px; line-height: 1.2; white-space: nowrap; }
+  .bag:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .bag .sold-tag { position: absolute; top: 14px; right: 14px; background: var(--accent); color: var(--cream); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 5px 12px; }
   .bag.sold img { opacity: .8; }
   .bag.sold .price { text-decoration: line-through; color: var(--ink-soft); }
-  .bag .origin { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
 
   /* Story */
   .story { background: var(--ink); color: var(--cream); padding: 110px 0; }
-  .story .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center; }
-  .story h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.5vw, 68px); line-height: 1.02; }
+  .story .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+  .story h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 4.4vw, 62px); line-height: 1.02; }
   .story h2 em { color: #E07B54; }
   .story p { color: #C9C5BC; font-size: 17px; margin-bottom: 18px; }
   .story .eyebrow { color: #E07B54; display: block; margin-bottom: 18px; }
@@ -119,7 +123,6 @@
   footer { border-top: 1px solid var(--rule); padding: 36px 0; font-size: 13px; color: var(--ink-soft); }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   footer .logo { font-size: 26px; color: var(--ink); }
-  .m-br { display: none; }
 
   /* Lightbox */
   .lightbox { position: fixed; inset: 0; background: rgba(20,23,31,.94); z-index: 50; display: none; align-items: center; justify-content: center; padding: 40px 72px; }
@@ -140,13 +143,19 @@
   @media (max-width: 640px) {
     .wrap { padding: 0 16px; }
     nav ul { display: none; }
+    .nav-cta { display: inline-block; }
     .hero { padding-top: 48px; }
     .btn.ghost { margin: 12px 0 0; }
-    .grid { grid-template-columns: 1fr; }
+    .grid { gap: 28px 12px; }
+    .bag h3, .bag .price { font-size: 19px; }
+    .bag .line { display: block; }
+    .bag .price { display: block; }
+    .bag .detail { font-size: 12px; }
+    .bag .num { top: 8px; left: 8px; font-size: 15px; padding: 1px 7px; }
+    .bag .sold-tag { top: 8px; right: 8px; font-size: 10px; padding: 3px 8px; }
     section.collection, .story, .visit { padding: 72px 0; }
     .lightbox { padding: 24px 16px; }
     footer .sep { display: none; }
-    .m-br { display: inline; }
     footer .where { display: block; }
   }
 </style>
@@ -161,6 +170,7 @@
       <li><a href="#story">Our Story</a></li>
       <li><a href="#visit">Visit</a></li>
     </ul>
+    <a href="sms:+14794853374" class="nav-cta">Text us</a>
   </div>
 </nav>
 
@@ -186,7 +196,7 @@
 
 <section class="story" id="story">
   <div class="wrap">
-    <h2>Made in Italy.<br class="m-br"> Found in Bentonville.</h2>
+    <h2>Made in Italy.<br> Found in Bentonville.</h2>
     <div>
       <span class="eyebrow">Our Story</span>
       <p>bvento brings a carefully selected range of Italian-made leather handbags to our corner of the Ozarks. Each piece is inspected by hand and offered in limited numbers, bringing a little of Italy to Bentonville, one bag at a time.</p>
@@ -249,6 +259,9 @@
     bag.src = `photos/bag-${n}.jpg?v=cream`;
     const el = document.createElement("article");
     el.className = bag.sold ? "bag sold" : "bag";
+    el.tabIndex = 0;
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-label", `View larger photo: ${bag.name}, ${bag.detail}${bag.sold ? ", sold" : bag.price ? `, $${bag.price}` : ""}`);
     el.innerHTML = `
       <div class="frame">
         <img src="${bag.src}" alt="${bag.name} — Italian leather handbag" loading="lazy">
@@ -257,32 +270,33 @@
         ${bag.sold ? `<span class="sold-tag">Sold</span>` : ""}
       </div>
       <div class="meta">
-        <div><h4>${bag.name}</h4><div class="detail">${bag.detail}</div></div>
-        <div class="right">${bag.price ? `<div class="price">$${bag.price}</div>` : ""}<span class="origin">Made in Italy</span></div>
+        <div class="line"><h3>${bag.name}</h3>${bag.price ? `<span class="price">$${bag.price}</span>` : ""}</div>
+        <div class="detail">${bag.detail}</div>
       </div>`;
     const img = el.querySelector("img");
     img.addEventListener("error", () => { el.querySelector(".frame").classList.add("missing"); bag.missing = true; });
     el.addEventListener("click", () => { if (!bag.missing) openLb(i); });
+    el.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && !bag.missing) { e.preventDefault(); openLb(i); } });
     grid.appendChild(el);
   });
 
   // Lightbox
   const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
-  let cur = 0;
+  let cur = 0, lastFocus = null;
   const available = () => BAGS.map((b, i) => b.missing ? null : i).filter(i => i !== null);
   function openLb(i) {
     cur = i;
     const b = BAGS[i];
     lbImg.src = b.src; lbImg.alt = b.name;
     lbCap.innerHTML = `${b.name}${b.sold ? " — Sold" : b.price ? ` — $${b.price}` : ""}<span>No. ${pad(i + 1)} · ${b.detail} · Made in Italy</span>`;
-    lb.classList.add("open");
+    if (!lb.classList.contains("open")) { lastFocus = document.activeElement; lb.classList.add("open"); lb.querySelector(".lb-close").focus(); }
   }
   function step(d) {
     const list = available(); if (!list.length) return;
     const pos = list.indexOf(cur);
     openLb(list[(pos + d + list.length) % list.length]);
   }
-  const closeLb = () => lb.classList.remove("open");
+  const closeLb = () => { lb.classList.remove("open"); if (lastFocus) lastFocus.focus(); };
   lb.querySelector(".lb-close").onclick = closeLb;
   lb.querySelector(".lb-prev").onclick = e => { e.stopPropagation(); step(-1); };
   lb.querySelector(".lb-next").onclick = e => { e.stopPropagation(); step(1); };
@@ -295,6 +309,35 @@
   });
 
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Product listings for search engines, built from BAGS so prices stay in one place.
+  const ld = document.createElement("script");
+  ld.type = "application/ld+json";
+  ld.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "bvento handbags available now",
+    "itemListElement": BAGS.map((b, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Product",
+        "name": `${b.name} — ${b.detail.split(" · ").pop()}`,
+        "description": `${b.detail}. Made in Italy.`,
+        "image": `https://bvento.com/photos/bag-${pad(i + 1)}.jpg`,
+        "brand": { "@type": "Brand", "name": "bvento" },
+        "countryOfOrigin": "IT",
+        "offers": {
+          "@type": "Offer",
+          "price": b.price,
+          "priceCurrency": "USD",
+          "availability": b.sold ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
+          "seller": { "@type": "Organization", "name": "bvento" }
+        }
+      }
+    }))
+  });
+  document.head.appendChild(ld);
 
   const inStock = BAGS.filter(b => !b.sold).length;
   document.getElementById("stock").textContent = `${inStock} ${inStock === 1 ? "bag" : "bags"} available in Bentonville today.`;
